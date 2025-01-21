@@ -1,0 +1,93 @@
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+B{
+  font-family: 'Satt';
+  font-size: 18px;
+}
+
+.text-info {
+  padding: 40px;
+  background-color: #E3F5EE;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.text-info-left{
+  text-align: left;
+  width: 40%;
+  height: 100%;
+}
+
+.text-info-left button{
+  width: 250px;
+  height: 40px;
+  margin: 10px;
+
+}
+.button-alin{
+  display: flex;
+  flex-direction: row;
+}
+
+.text-info-left h1{
+  line-height: 1em;
+  font-size: 60px;
+  color: #7AA191;
+  text-transform: Uppercase;
+  font-family: 'Satt';
+  margin-top: 0;
+}
+
+
+.text-info p{
+  color: #7AA191;
+}
+
+.img-info{
+  overflow: hidden;
+  display: inline-block;
+  top:0;
+  border: 2px solid #7AA191;
+  border-radius: 10px;
+
+}
+
+.img-info p{
+
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+
+.partner{
+  background-color: #E3F5EE;
+}
+
+/* Button style */
+.abo{
+  transition: all .5s ease;
+  background-color: #7AA191;
+  color: #E3F5EE;
+
+}
+
+.abo:hover{
+  background-color: #E3F5EE;
+  color: #7AA191;
+}
+
+.legume{
+  transition: all .5s ease;
+  background-color: transparent;
+  color: #7AA191;
+}
+.legume:hover{
+  background-color: #7AA191;
+  color: #FEFDF9;
+}
+

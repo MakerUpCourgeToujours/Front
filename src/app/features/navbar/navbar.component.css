@@ -1,0 +1,79 @@
+h1{
+  font-family: 'Satt';
+  color:#7AA191
+}
+
+.navbar{
+  /*top navbar*/
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FEFDF9;
+  border-bottom-left-radius: 10px ;
+  border-bottom-right-radius: 10px ;
+  box-shadow: 0px 5px 10px #7AA191;
+}
+
+.info-gasap{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7AA191;
+  padding: 10px;
+}
+.info-gasap p{
+
+  color: #FEFDF9;
+  margin: 0px;
+}
+
+
+.logo-titre{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-titre img{
+  margin-left: 30px;
+}
+
+.logo-titre input{
+  box-sizing: border-box;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: #E3F5EE;
+  background-image: url("/img/searchicon.svg");
+  background-position: 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+
+}
+.logo-titre input::placeholder {
+  color: #7AA191;
+  font-family: 'Regular';
+}
+
+.liens{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.liens button{
+  padding: 10px;
+  margin: 10px;
+}
+
+button{
+  transition: all .5s ease;
+  background-color : transparent;
+  color: #7AA191;
+  font-size: 16px;
+  padding: 20px;
+}
+button:hover{
+  background-color: #7AA191;
+  color: #FEFDF9;
+}

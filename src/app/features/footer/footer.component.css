@@ -1,0 +1,64 @@
+.footer {
+padding: 25px ;
+  box-shadow: 0px -5px 10px #7AA191;
+  background-color: #E3F5EE;
+}
+
+.footer a{
+  margin: 10px;
+}
+
+.footer-aling{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+button{
+  transition: all .5s ease;
+  width: 100px;
+  height: 45px;
+  background-color: transparent;
+  color: #7AA191;
+}
+
+button:hover{
+  background-color: #7AA191;
+  color: #FEFDF9;
+}
+
+hr {
+  border: none;
+  border-top: 3px double #333;
+  color: #7AA191;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
+
+
+
+p{
+  text-align: center;
+  font-family: 'Satt';
+  color: #7AA191;
+}
+
+.footer-align-a a:link{
+  color: #7AA191;
+  text-decoration: none;
+}
+.footer-align-a a:visited{
+  color: #7AA191;
+  text-decoration: none;
+}
+.footer-align-a a:hover{
+  color: #7AA191;
+  text-decoration: underline;
+}
+
+.footer-align-a a:active{
+  color: #7AA191;
+  text-decoration: underline;
+}
