@@ -8,7 +8,7 @@
     engagement annuel garantissent des produits frais et un lien direct avec la terre.
     <B>Rejoignez-nous pour une consommation durable ! </B></p>
   <div class="button-alin">
-    <button class="abo"> Abonnements aux paniers </button>
+    <button class="abo" routerLink="abonement"> Abonnements aux paniers </button>
     <button class="legume">Tous nos légumes à l’unité</button>
   </div>
 </div>
@@ -16,7 +16,7 @@
 <!-- TODO changer la photo ici-->
   <img src="/img/test_rectangle.png" alt="">
   <p>Légumes de saison</p>
-  <h4>Voir les paniers</h4>
+  <h2 (click)="goAbonnement()">Voir les paniers</h2>
   <p>Séance d'information</p>
 </div>
 
@@ -24,12 +24,15 @@
 
 <div class="partner">
   <h1>Nos partenaires</h1>
-  <img src="/img/Farm.png" alt="">
-  <img src="/img/Cabas.png" alt="">
-  <img src="/img/petitKaiyou.png" alt="">
-  <img src="/img/Belicious.png" alt="">
-  <img src="/img/TheBrain.png" alt="">
-  <img src="/img/GASAP.svg" alt="">
+  <div class="partner-image">
+    <img src="/img/Belicious.png" alt="Belicious">
+    <img src="/img/petitKaiyou.png" alt="Petit Kaiyou">
+    <img src="/img/Farm.png" alt="Farm">
+    <img src="/img/Cabas.png" alt="Cabas">
+    <img src="/img/TheBrain.png" alt="the Barn">
+    <img src="/img/Logo-GASAP.svg" alt="GASAP">
+  </div>
+
 
 
 </div>

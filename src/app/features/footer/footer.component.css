@@ -29,8 +29,7 @@ button:hover{
 
 hr {
   border: none;
-  border-top: 3px double #333;
-  color: #7AA191;
+  border-top: 3px double #7AA191;
   overflow: visible;
   text-align: center;
   height: 5px;

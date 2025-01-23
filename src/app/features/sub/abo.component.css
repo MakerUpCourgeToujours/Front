@@ -1,0 +1,57 @@
+.formules{
+  border: 10px;
+  margin: 20px;
+  border-radius: 20px ;
+  background-color: #7AA191;
+}
+h1{
+  font-family: 'Satt';
+  text-align: center;
+  text-transform: uppercase;
+  color: #E3F5EE;
+  font-size: 50px;
+}
+
+.titre{
+  margin: 5px;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: #E3F5EE;
+  color: #7AA191;
+  width: 40rem;
+  text-align: center;
+}
+.titre h2{
+  margin: 0px;
+  padding: 0px;
+}
+
+.panier{
+
+  background-color: #FEFDF9;
+}
+
+.panier-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.panier-detail{
+  background-color: #90b8a5;
+}
+.panier-detail h3{
+  margin-top: 0;
+}
+
+
+
+
+.formules-flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+

@@ -91,3 +91,36 @@ B{
   color: #FEFDF9;
 }
 
+.img-info h2{
+
+  text-align: center;
+  color: #7AA191;
+  cursor: pointer;
+
+}
+
+.partner{
+  padding-bottom: 10%;
+}
+.partner h1{
+  padding-top: 20px;
+  padding-left: 20px;
+  color: #7AA191;
+  font-family: 'Satt';
+  font-size: 60px;
+}
+
+.partner-image{
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.partner img {
+  width: 15em;
+  height: 15em;
+
+}
+

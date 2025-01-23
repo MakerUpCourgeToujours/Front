@@ -77,3 +77,11 @@ button:hover{
   background-color: #7AA191;
   color: #FEFDF9;
 }
+
+.logo-titre a:link{
+  text-decoration: none;
+}
+.logo-titre a:visited{
+  text-decoration: none;
+
+}

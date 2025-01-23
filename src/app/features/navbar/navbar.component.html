@@ -5,17 +5,21 @@
 </div>
 
 <div class="logo-titre">
-  <img src="img/logo-papelotte.svg">
-  <h1>COURGE TOUJOURS !</h1>
+  <a routerLink="home">
+    <img src="img/logo-papelotte.svg">
+  </a>
+  <a routerLink="home">
+    <h1>COURGE TOUJOURS !</h1>
+  </a>
     <input type="search" placeholder="Que cherchez-vous ?">
 </div>
 
   <div class="liens" >
-
-    <button type="button">Abonnements aux paniers</button>
-    <button type="button">Légume à l'unité</button>
-    <button type="button">Produits locaux</button>
-    <button type="button" disabled>Recettes</button>
+<!-- TODO ici changer les liens quand les page sont dispo -->
+    <button type="button" routerLink="abonement" >Abonnements aux paniers</button>
+    <button type="button" routerLink="#" >Légume à l'unité</button>
+    <button type="button" routerLink="#" >Produits locaux</button>
+    <button type="button" routerLink="#">Recettes</button>
 
   </div>
 
