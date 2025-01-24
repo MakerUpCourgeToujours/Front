@@ -1,3 +1,25 @@
+<div class="info-sub">
+
+  <h1 class="info-sub-titre">Les Paniers</h1>
+
+  <p class="info-sub-text">
+    Après le succès de nos abonnements de paniers en 2023, nous relançons la saison 2024 avec des nouvelles formules ! <br> <br>
+
+    Nous continuons à développer notre commercialisation en direct afin de retrouver un contact avec les consommateurs, les familles qui vivent non loin de la ferme et autres convaincus. Ce modèle, plus solidaire, relie davantage le consommateur à la terre et nous à l’humain. Notre volonté est de créer du lien avec les consommateurs et partager ce lieu avec petits et grands pour vous faire découvrir notre réalité de producteur. <br> <br>
+
+    Nous livrons nos paniers sur les lieux de permanence des GASAP de la Papelotte et les mangeur.se.s procèdent eux-mêmes à la répartition / distribution des paniers. <br> <br>
+
+    Comme il s’agit d’un système autogéré, les mangeur.se.s assurent à tour de rôles la permanence, la gestion des horaires, des paiements et des tâches qui permettent au groupe de fonctionner. <br> <br>
+
+    Les paiements se font à l’avance, en une ou trois fois, ce qui garantit des revenus réguliers aux producteur.rice.s et leurs permettent de prévoir leurs cultures. Les mangeur.se.s s’engagent pour un an et s’engagent à trouver des remplaçants en cas de départ du groupe avant la fin de la saison.</p>
+</div>
+
+
+
+
+
+
+
 <div class="formules">
 
   <h1>nos formules <br>d’Abonnements</h1>
@@ -15,9 +37,20 @@
             </div>
             @for (sub of Subs;track sub.idSub){
               @if (sub.idSub == 1){
-                <p>{{sub.priceSub | currency:'EUR':true }} </p>
+                <p>{{sub.totalBasket}} paniers au total</p>
+                <p class="panier-size">{{(sub.priceSub/sub.totalBasket).toFixed(2)}} € / Panier</p>
+                <p class="panier-total">{{sub.priceSub}} € / An </p>
+
               }
             }
+
+            <!--    BUTTON        -->
+            <div class="button">
+              <button type="button" class="blob-btn">
+                +
+              </button>
+            </div>
+
 
           </div>
 
@@ -26,12 +59,29 @@
               <h3>grand Panier</h3>
             </div>
 
-            <p>un prix ici !</p>
+            @for (sub of Subs;track sub.idSub){
+              @if (sub.idSub == 4){
+                <p>{{sub.totalBasket}} paniers au total</p>
+                <p class="panier-size">{{(sub.priceSub/sub.totalBasket).toFixed(2)}} € / Panier</p>
+                <p class="panier-total">{{sub.priceSub}} € / An </p>
+
+              }
+            }
+
+              <!--    BUTTON        -->
+            <div class="button">
+              <button type="button" class="blob-btn">
+                +
+              </button>
+            </div>
+
+
+
 
       </div>
 
       </div>
-
+                                                                    <!--BIMENSUELLE ICI-->
     </div>
     <div class="formules-Bimensuelle">
 
@@ -39,6 +89,53 @@
         <h2>Formule Bimensuelle</h2>
       </div>
 
-    </div>
+      <div class="panier-flex">
+        <div class="panier">
+          <div class="panier-detail">
+            <h3>Petit Panier</h3>
+          </div>
+          @for (sub of Subs;track sub.idSub){
+            @if (sub.idSub == 2){
+              <p>{{sub.totalBasket}} paniers au total</p>
+              <p class="panier-size">{{(sub.priceSub/sub.totalBasket).toFixed(2)}} € / Panier</p>
+              <p class="panier-total">{{sub.priceSub}} € / An </p>
+
+            }
+          }
+
+          <!--    BUTTON        -->
+          <div class="button">
+            <button type="button" class="blob-btn">
+              +
+            </button>
+          </div>
+
+
+        </div>
+
+        <div class="panier">
+          <div class="panier-detail">
+            <h3>grand Panier</h3>
+          </div>
+
+            @for (sub of Subs;track sub.idSub){
+          @if (sub.idSub == 2){
+            <p>{{sub.totalBasket}} paniers au total</p>
+            <p class="panier-size">{{(sub.priceSub/ sub.totalBasket).toFixed(2)}} € / Panier</p>
+            <p class="panier-total">{{sub.priceSub}} € / An </p>
+
+          }
+        }
+
+          <!--    BUTTON        -->
+          <div class="button">
+            <button type="button" class="blob-btn">
+              +
+            </button>
+          </div>
+
+
+
+        </div>
   </div>
 </div>
