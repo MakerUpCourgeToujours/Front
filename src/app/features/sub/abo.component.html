@@ -14,19 +14,12 @@
     Les paiements se font à l’avance, en une ou trois fois, ce qui garantit des revenus réguliers aux producteur.rice.s et leurs permettent de prévoir leurs cultures. Les mangeur.se.s s’engagent pour un an et s’engagent à trouver des remplaçants en cas de départ du groupe avant la fin de la saison.</p>
 </div>
 
-
-
-
-
-
-
 <div class="formules">
 
   <h1>nos formules <br>d’Abonnements</h1>
 
   <div class="formules-flex">
     <div class="formules-Hebdomadaire">
-
       <div class="titre">
         <h2>Formule Hebdomadaire</h2>
       </div>
@@ -42,16 +35,17 @@
                 <p class="panier-total">{{sub.priceSub}} € / An </p>
 
               }
+            } @empty {
+              <p>De malicieux légumes ont semé la pagaille dans nos paniers ! Veuillez patienter quelques instants pendant que nous réorganisons tout... ou revenez un peu plus tard, quand nos carottes auront retrouvé leurs esprits </p>
             }
 
-            <!--    BUTTON        -->
-            <div class="button">
-              <button type="button" class="blob-btn">
-                +
-              </button>
+            <!--    BUTTON  CHECK      -->
+            <div class="button-picto">
+              <img src="/img/picto/people_2.svg" alt="" class="picto">
+              <input type="radio" name="choise_basket" id="hpp" value="1" (change)="onSubChange($event)">
+              <label for="hpp" class="radio-label">
+              </label>
             </div>
-
-
           </div>
 
           <div class="panier">
@@ -66,23 +60,22 @@
                 <p class="panier-total">{{sub.priceSub}} € / An </p>
 
               }
+            }@empty {
+              <p>De malicieux légumes ont semé la pagaille dans nos paniers ! Veuillez patienter quelques instants pendant que nous réorganisons tout... ou revenez un peu plus tard, quand nos carottes auront retrouvé leurs esprits !</p>
             }
 
               <!--    BUTTON        -->
-            <div class="button">
-              <button type="button" class="blob-btn">
-                +
-              </button>
+            <div class="button-picto">
+              <img src="/img/picto/people_3.svg" alt="" class="picto">
+              <input type="radio" name="choise_basket" id="hgp" value="2" (change)="onSubChange($event)">
+              <label for="hgp" class="radio-label">
+              </label>
             </div>
-
-
-
-
+          </div>
       </div>
 
-      </div>
-                                                                    <!--BIMENSUELLE ICI-->
     </div>
+                                                                    <!--BIMENSUELLE ICI-->
     <div class="formules-Bimensuelle">
 
       <div class="titre">
@@ -101,16 +94,18 @@
               <p class="panier-total">{{sub.priceSub}} € / An </p>
 
             }
+          }@empty {
+            <p>De malicieux légumes ont semé la pagaille dans nos paniers ! Veuillez patienter quelques instants pendant que nous réorganisons tout... ou revenez un peu plus tard, quand nos carottes auront retrouvé leurs esprits </p>
           }
 
           <!--    BUTTON        -->
-          <div class="button">
-            <button type="button" class="blob-btn">
-              +
-            </button>
+          <div class="button-picto">
+          <img src="/img/picto/people_2.svg" alt="" class="picto">
+            <input type="radio" name="choise_basket" id="bpp" value="1" (change)="onSubChange($event)">
+            <label for="bpp" class="radio-label">
+
+            </label>
           </div>
-
-
         </div>
 
         <div class="panier">
@@ -125,17 +120,73 @@
             <p class="panier-total">{{sub.priceSub}} € / An </p>
 
           }
-        }
+        }@empty {
+              <p>De malicieux légumes ont semé la pagaille dans nos paniers ! Veuillez patienter quelques instants pendant que nous réorganisons tout... ou revenez un peu plus tard, quand nos carottes auront retrouvé leurs esprits </p>
+            }
 
           <!--    BUTTON        -->
-          <div class="button">
-            <button type="button" class="blob-btn">
-              +
-            </button>
+          <div class="button-picto">
+            <img src="/img/picto/people_3.svg" alt="" class="picto">
+            <input type="radio" name="choise_basket" id="bgp" value="2" (change)="onSubChange($event)">
+            <label for="bgp" class="radio-label">
+            </label>
           </div>
-
-
-
         </div>
+      </div>
+    </div>
+
+
+
   </div>
+
+
+      @if (infosub == 1){
+        <div class="chose-depot">
+          <label for="depot-petit">dans quel point de depot ?</label>
+          <select class="select-depotList" id="depot-petit">
+            @for (depot of depots;track depot.idGasap){
+              <option [value]="depot.idGasap" >{{depot.depotName}}</option>
+            }
+          </select>
+        </div>
+      } @else if (infosub == 2) {
+        <div class="chose-depot">
+          <label for="depot-grand">dans quel point de depot ?</label>
+          <select class="select-depotList" id="depot-grand">
+            @for (depot of depots;track depot.idGasap){
+              <option [value]="depot.idGasap" >{{depot.depotName}}</option>
+            }
+          </select>
+          <label for="semaine">dans quel point de depot ?</label>
+          <select id="semaine">
+              <option value="pair">semaine pair</option>
+            <option value="impair">semaine impair</option>
+          </select>
+        </div>
+
+      } @else{}
+
+</div>
+
+
+<!--DEPOT -->
+<div class="info-depot">
+      <h1 class="info-depot-titre">Nos points de dépôts</h1>
+  <div class="depot-all">
+
+    @for (depot of depots; track depot.idGasap){
+      <div class="depot-detail">
+        <h5 class="depot-titre"> Groupe "{{depot.depotName}}"</h5>
+        <p> Adresse: {{depot.address}}</p>
+        <p>Distribution: {{depot.deliveryDay}}</p>
+        <p>Fréquence: </p>
+        <p>Contacte: </p>
+
+      </div>
+
+    } @empty {
+      <p>De malicieux légumes ont semé la pagaille dans nos point de dépots! revenez un peu plus tard, quand nos carottes auront retrouvé leurs esprits (F5 ou rafrechir la page)</p>
+    }
+  </div>
+
 </div>

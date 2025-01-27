@@ -115,27 +115,97 @@ h1{
 
 /*BUTTON */
 
-.button{
-  display: flex;
-  justify-content: flex-end;
+  input[type="radio"] {
+    display: none;
+  }
+.radio-label{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #FEFDF9;
+  background-image: url(/img/picto/check-default.svg) ;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F4D040; /* Couleur jaune */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.blob-btn{
-  width: 40px;
-  height: 40px;
+.radio-label:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(106, 106, 106, 0.6);
+}
+input[type="radio"]:checked + .radio-label {
+  background-image: url(/img/picto/check-01.svg); /* Chemin vers ton image de la coche */
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button-picto{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.button-picto img{
+  margin-bottom: 10px;
+}
+.button-picto label{
+  margin-right: 10px;
+}
+
+/* PICTO */
+
+.picto{
+  width: 100px;
+  height: 100px;
+}
+
+.info-depot{
+  border: 10px;
+  margin: 20px;
+  border-radius: 20px ;
+  background-color: #7AA191;
+
+
+
+}
+
+
+/* DEPOT Style */
+.depot-all{
+
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.depot-detail{
+  border-radius: 10px;
+  background-color: #E3F5EE;
+  width: 30%;
+  padding: 10px;
   margin: 10px;
+}
+
+.depot-detail h5{
+  font-size: 20px;
   text-align: center;
   text-transform: uppercase;
-  color: #FEFDF9;
-  font-weight: bold;
-  background-color: #F4D040;
-  outline: none;
-  border: none;
-  cursor: pointer;
-
 
 }
 
+.chose-depot{
+  background-color: #FEFDF9;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 10em;
+  height: 100%;
 
 
-
-
+}

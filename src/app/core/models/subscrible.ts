@@ -7,3 +7,9 @@ export interface SubType {
   totalBasket: number;
   deliveryTime: string;
 }
+
+export interface Subchose{
+
+
+
+}
