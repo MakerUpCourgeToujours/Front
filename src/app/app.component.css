@@ -2,7 +2,13 @@ app-navbar{
   top:0;
 }
 
-.margin{
+.with-navbar .margin {
   margin-top: 13%;
+  flex: 1 0 auto;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

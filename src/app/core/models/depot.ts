@@ -3,4 +3,6 @@ export interface DepotGasap{
   address:string;
   deliveryDay:string;
   depotName:string;
+  frequency:string;
+  mail:string;
 }

@@ -1,6 +1,14 @@
-<app-navbar class="navabar-top" ></app-navbar>
+
+<div class="page-container" [ngClass]="{'with-navbar': showNavbar}">
+@if (showNavbar){
+  <app-navbar class="navabar-top" ></app-navbar>
+}
+
 <div class="margin">
   <router-outlet></router-outlet>
 </div>
 
 <app-footer></app-footer>
+
+</div>
+

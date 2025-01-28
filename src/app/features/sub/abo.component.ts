@@ -9,7 +9,7 @@ import {DepotGasap} from '../../core/models/depot';
   selector: 'app-abo',
   standalone: true,
   imports: [
-    CurrencyPipe
+
   ],
   templateUrl: './abo.component.html',
   styleUrl: './abo.component.css'
@@ -20,7 +20,8 @@ export class AboComponent implements OnInit {
   Subs : SubType[] = [];
   depots:DepotGasap[] = [];
   choseSubType : Subchose[]=[];
-  infosub : number = 0;
+  //TODO changer en 0 quand tout est ok
+  infosub : number = 1;
 
   constructor(private readonly route: ActivatedRoute, private readonly subTypeService:SubtypeService ) { }
   ngOnInit(): void {
@@ -48,9 +49,10 @@ export class AboComponent implements OnInit {
 
   }
 
-  onSubChange(event: Event): void {
+  onSubChange(event: Event , taille:string): void {
     const target = event.target as HTMLInputElement;
     this.infosub = parseInt(target.value, 10);
+    console.log(taille);
   }
 
 

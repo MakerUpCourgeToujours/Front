@@ -8,15 +8,17 @@
     engagement annuel garantissent des produits frais et un lien direct avec la terre.
     <B>Rejoignez-nous pour une consommation durable ! </B></p>
   <div class="button-alin">
-    <button class="abo" routerLink="#"> Devenir un Mangeur </button>
-    <button class="legume" routerLink="#"> Devenir partenaire </button>
+    <button class="abo" routerLink="/createmangueur"> Devenir un Mangeur </button>
+    <button class="legume" routerLink="/createpartenaire"> Devenir partenaire </button>
   </div>
 </div>
 <div class="img-info">
 <!-- TODO changer la photo ici-->
   <img src="/img/test_rectangle.png" alt="">
   <p>Légumes de saison</p>
-  <h2 (click)="goAbonnement()">Voir les paniers</h2>
+  <a routerLink="/abonement">
+    <h2>Voir les paniers</h2>
+  </a>
   <p>Séance d'information</p>
 </div>
 

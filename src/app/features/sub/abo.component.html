@@ -42,7 +42,7 @@
             <!--    BUTTON  CHECK      -->
             <div class="button-picto">
               <img src="/img/picto/people_2.svg" alt="" class="picto">
-              <input type="radio" name="choise_basket" id="hpp" value="1" (change)="onSubChange($event)">
+              <input type="radio" name="choise_basket" id="hpp" value="1" (change)="onSubChange($event ,'petit')">
               <label for="hpp" class="radio-label">
               </label>
             </div>
@@ -67,7 +67,7 @@
               <!--    BUTTON        -->
             <div class="button-picto">
               <img src="/img/picto/people_3.svg" alt="" class="picto">
-              <input type="radio" name="choise_basket" id="hgp" value="2" (change)="onSubChange($event)">
+              <input type="radio" name="choise_basket" id="hgp" value="1" (change)="onSubChange($event,'grand')">
               <label for="hgp" class="radio-label">
               </label>
             </div>
@@ -101,7 +101,7 @@
           <!--    BUTTON        -->
           <div class="button-picto">
           <img src="/img/picto/people_2.svg" alt="" class="picto">
-            <input type="radio" name="choise_basket" id="bpp" value="1" (change)="onSubChange($event)">
+            <input type="radio" name="choise_basket" id="bpp" value="2" (change)="onSubChange($event,'petit')">
             <label for="bpp" class="radio-label">
 
             </label>
@@ -127,51 +127,66 @@
           <!--    BUTTON        -->
           <div class="button-picto">
             <img src="/img/picto/people_3.svg" alt="" class="picto">
-            <input type="radio" name="choise_basket" id="bgp" value="2" (change)="onSubChange($event)">
+            <input type="radio" name="choise_basket" id="bgp" value="2" (change)="onSubChange($event,'grand')">
             <label for="bgp" class="radio-label">
             </label>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
+  <div class="form-detail">
+    @if (infosub == 1){
+      <div class="chose-depot">
+        <label for="depot-petit">dans quel point de depot ?</label>
+        <select class="select-depotList" id="depot-petit">
+          @for (depot of depots;track depot.idGasap){
+            <option [value]="depot.idGasap" >{{depot.depotName}}</option>
+          }
+        </select>
+        <button type="submit" class="card">Ajouter au painer </button>
+      </div>
+    } @else if (infosub == 2) {
+      <div class="chose-depot">
+        <label for="depot-grand">dans quel point de depot ?</label>
+        <select class="select-depotList" id="depot-grand">
+          @for (depot of depots;track depot.idGasap){
+            <option [value]="depot.idGasap" >{{depot.depotName}}</option>
+          }
+        </select>
+        <label for="semaine">dans quel semaine ?</label>
+        <select id="semaine">
+          <option value="pair">semaine pair</option>
+          <option value="impair">semaine impair</option>
+        </select>
+        <button type="submit" class="card">Ajouter au painer </button>
+      </div>
+
+    } @else{}
 
 
   </div>
 
 
-      @if (infosub == 1){
-        <div class="chose-depot">
-          <label for="depot-petit">dans quel point de depot ?</label>
-          <select class="select-depotList" id="depot-petit">
-            @for (depot of depots;track depot.idGasap){
-              <option [value]="depot.idGasap" >{{depot.depotName}}</option>
-            }
-          </select>
-        </div>
-      } @else if (infosub == 2) {
-        <div class="chose-depot">
-          <label for="depot-grand">dans quel point de depot ?</label>
-          <select class="select-depotList" id="depot-grand">
-            @for (depot of depots;track depot.idGasap){
-              <option [value]="depot.idGasap" >{{depot.depotName}}</option>
-            }
-          </select>
-          <label for="semaine">dans quel point de depot ?</label>
-          <select id="semaine">
-              <option value="pair">semaine pair</option>
-            <option value="impair">semaine impair</option>
-          </select>
-        </div>
 
-      } @else{}
+
+
+
 
 </div>
 
 
+
+
+
+
+
+
+
 <!--DEPOT -->
 <div class="info-depot">
-      <h1 class="info-depot-titre">Nos points de dépôts</h1>
+  <h1 class="info-depot-titre">Nos points de dépôts</h1>
   <div class="depot-all">
 
     @for (depot of depots; track depot.idGasap){
@@ -179,8 +194,8 @@
         <h5 class="depot-titre"> Groupe "{{depot.depotName}}"</h5>
         <p> Adresse: {{depot.address}}</p>
         <p>Distribution: {{depot.deliveryDay}}</p>
-        <p>Fréquence: </p>
-        <p>Contacte: </p>
+        <p>Fréquence:{{depot.frequency}} </p>
+        <p>Contacte: {{depot.mail}} </p>
 
       </div>
 
@@ -190,3 +205,5 @@
   </div>
 
 </div>
+
+

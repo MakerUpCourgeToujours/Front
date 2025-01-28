@@ -13,8 +13,4 @@ import {RouterLink} from '@angular/router';
 export class HomeComponent {
   private router: any;
 
-  goAbonnement() {
-    //TODO changer le liens vers la page abo
-    this.router.navigate(['/#']);
-  }
 }
