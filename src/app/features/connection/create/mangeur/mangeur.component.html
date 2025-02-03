@@ -1,20 +1,48 @@
 
+<a type="button-back" appBack>
+  <img src="/img/picto/back.svg" class="button-back" alt="Retour" width="62px" height="62px">
+</a>
 <div class="formulaire">
   <h3>Devenir un mangeur !</h3>
   <div class="formulaire-info">
 
-    <form (submit)="submit($event)">
-      <input type="text" id="name"  placeholder="Nom">
+    <form [formGroup]="createMangeur" (submit)="submit($event)">
+      @if (createMangeur.controls['lastName'].touched && !createMangeur.controls['lastName'].valid){
+        <span class="error">
+                le nom est requis !
+        </span>
+      }
+      <input type="text" id="name" placeholder="Nom"  formControlName="lastName">
 
-      <input type="text" id="lastname" placeholder="Prénom" >
+      @if (createMangeur.controls['firstName'].touched && !createMangeur.controls['firstName'].valid){
+        <span class="error">
+                le Prénom est requis !
+        </span>
+      }
+      <input type="text" id="lastname" placeholder="Prénom" formControlName="firstName" >
 
-      <input type="email" id="mail" placeholder="Email">
+      @if (createMangeur.controls['email'].touched && !createMangeur.controls['email'].valid){
+        <span class="error">
+                le mail est requis !
+        </span>
+      }
+      <input type="email" id="mail" placeholder="Email" formControlName="email">
 
-      <input type="password" id="password" placeholder="mot de passe">
+      @if (createMangeur.controls['password'].touched && !createMangeur.controls['password'].valid){
+        <span class="error">
+                le mot de passe est requis !
+        </span>
+      }
+      <input type="password" id="password" placeholder="mot de passe" formControlName="password">
 
-      <input id="num" type="text" placeholder="Numéro de téléphone">
+      @if (createMangeur.controls['phoneNumber'].touched && !createMangeur.controls['phoneNumber'].valid){
+        <span class="error">
+                le Numéro de téléphone est requis !
+        </span>
+      }
+      <input id="num" type="text" placeholder="Numéro de téléphone" formControlName="phoneNumber">
 
-      <button type="submit"> Créer mon compte </button>
+      <button type="submit" [disabled]="!createMangeur.valid"> Créer mon compte </button>
     </form>
   </div>
   <div class="img_size">

@@ -1,1 +1,105 @@
-<p>partenaire works!</p>
+
+<a type="button-back" appBack>
+  <img src="/img/picto/back.svg" class="button-back" alt="Retour" width="62px" height="62px">
+</a>
+<div class="formulaire">
+  <h3>Devenir un Partenaire !</h3>
+  <div class="formulaire-info">
+
+    <form [formGroup]="createPartenaireForm" (submit)="submit($event)">
+
+      @if (isValid('lastName')){
+        <span class="error">
+                le nom est requis !
+        </span>
+      }
+      <input type="text" id="name" placeholder="Nom"  formControlName="lastName">
+
+      @if (isValid('firstName')){
+        <span class="error">
+                le prénom est requis !
+        </span>
+      }
+      <input type="text" id="lastname" placeholder="Prénom" formControlName="firstName" >
+
+
+      @if (isValid('email')){
+        <span class="error">
+                le mail est requis !
+        </span>
+      }
+      <input type="email" id="mail" placeholder="Email" formControlName="email">
+
+      @if (isValid('password')){
+        <span class="error">
+                le most de passe est requis !
+        </span>
+      }
+      <input type="password" id="password" placeholder="mot de passe" formControlName="password">
+
+      @if (isValid('phoneNumber')){
+        <span class="error">
+                le numero de téléphone est requis !
+        </span>
+      }
+      <input id="num" type="text" placeholder="Numéro de téléphone" formControlName="phoneNumber">
+                                          <!--INFO compagnie ↓ -->
+      <h2 class="sous-titre"> information de votre compagne </h2>
+      @if (isValid('nameCopany')){
+        <span class="error">
+                le nom de l'entrepise est requis !
+        </span>
+      }
+      <input  type="text" placeholder="Nom de la compagnie" formControlName="nameCopany">
+
+
+      @if (isValid('typeUserB2B')){
+        <span class="error">
+                le type de partenaire est requis ! (restaurant , magasin , ...)
+        </span>
+      }
+      <input type="text" placeholder="type de partainaire , restaurant, magasin,..." formControlName="typeUserB2B" >
+
+      @if (isValid('street')){
+        <span class="error">
+                la rue est requis !
+        </span>
+      }
+      <input type="text" placeholder="Rue" formControlName="street">
+
+      @if (isValid('numAdrress')){
+        <span class="error">
+                le numero de la rue est requis !
+        </span>
+      }
+      <input type="text" placeholder="Numero de l'adresse" formControlName="numAdrress">
+
+      @if (isValid('city')){
+        <span class="error">
+                la ville ou le village est requis !
+        </span>
+      }
+      <input type="text" placeholder="Ville/Village" formControlName="city">
+
+      @if (isValid('postalCode')){
+        <span class="error">
+                le code postal est requis !
+        </span>
+      }
+      <input type="text" placeholder="Code postal" formControlName="postalCode">
+
+      @if (isValid('tavNumber')){
+        <span class="error">
+                le Numero de TVA est requis !
+        </span>
+      }
+      <input type="text" placeholder="Numero de TVA" formControlName="tavNumber">
+
+
+      <button type="submit" [disabled]="!createPartenaireForm.valid"   > Créer mon compte </button>
+    </form>
+  </div>
+  <div class="img_size">
+    <img src="/img/Carotte.png" alt="">
+  </div>
+</div>
