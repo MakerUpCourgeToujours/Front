@@ -1,13 +1,11 @@
 
-
-
 .formulaire{
   padding: 10px;
   margin: 70px;
-  margin-left: 500px;
-  margin-right: 500px;
+
   border-radius: 10px;
   background-color: #7AA191;
+  margin-bottom: 300px;
 }
 
 h3{
@@ -25,11 +23,6 @@ h3{
   text-align: center;
 }
 
-form label{
-  font-size: 20px;
-
-
-}
 
 form input{
   margin: 10px;
@@ -43,34 +36,11 @@ form input{
   font-size: 15px;
   cursor: pointer;
   padding-left: 20px;
-  }
+}
 form input:hover{
   color: black;
   font-family: Regular;
   border: 2px solid #FEFDF9;
-}
-
-
-
-
-
-
-
-
-button{
-  margin: 20px;
-  width: 150px;
-  height: 40px;
-}
-
-img{
-  width: 100px;
-
-
-}
-.img_size{
-  display: flex;
-  justify-content: center;
 }
 
 
@@ -83,8 +53,8 @@ img{
 
 }
 
-.error{
-  color: #F4D040;
-  font-family: 'Satt';
-
+button{
+  margin: 20px;
+  width: 150px;
+  height: 40px;
 }

@@ -1,6 +1,12 @@
 h1{
   font-family: 'Satt';
-  color:#7AA191
+  color:#7AA191;
+
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translateX(-50%);
+
 }
 
 .navbar{
@@ -85,3 +91,11 @@ button:hover{
   text-decoration: none;
 
 }
+
+.button-login{
+  padding: 12px 20px 12px ;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+

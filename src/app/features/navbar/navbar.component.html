@@ -11,7 +11,15 @@
   <a routerLink="home">
     <h1>COURGE TOUJOURS !</h1>
   </a>
+  <div>
     <input type="search" placeholder="Que cherchez-vous ?">
+    @if(!isloginin){
+      <button routerLink="/login" class="button-login" > Login </button>
+    } @else if (isloginin){
+      <button class="button-login" (click) ="lougout()"> logout </button>
+    }
+  </div>
+
 </div>
 
   <div class="liens" >
@@ -23,7 +31,7 @@
 
   </div>
 
+  <div> <p>bonjour {{userinfo?.lastname}}</p> </div>
 
 
 </div>
-

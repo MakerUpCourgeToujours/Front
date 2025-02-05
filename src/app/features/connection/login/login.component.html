@@ -1,0 +1,17 @@
+<a type="button-back" appBack>
+  <img src="/img/picto/back.svg" class="button-back" alt="Retour" width="62px" height="62px">
+</a>
+<div class="formulaire">
+  <h3>Se connecter </h3>
+  <div class="formulaire-info">
+
+    <form [formGroup]="loginForm" (submit)="submit($event)">
+      <input type="text" placeholder="Email" formControlName="email">
+      <input type="text" placeholder="password" formControlName="password">
+
+
+      <button type="submit"> Se connecter </button>
+
+    </form>
+  </div>
+</div>
