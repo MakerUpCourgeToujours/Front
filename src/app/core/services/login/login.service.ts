@@ -33,28 +33,43 @@ export class LoginService {
   //prendre le token
 
   getJwtToken(): string | null {
-    const currentUser = localStorage.getItem('currentUser');
+    const currentUser = localStorage.getItem('token');
     if (currentUser) {
-      const userToken: User = JSON.parse(currentUser);
-      return userToken.token; // Assurez-vous que le modèle DecodeJwtTokenResponse possède une propriété 'token'
-
+      // const userToken: User = JSON.parse(currentUser);
+      // return userToken.token; // Assurez-vous que le modèle DecodeJwtTokenResponse possède une propriété 'token'
+      return currentUser;
     }
     return null;
   }
 
-  // decoder le token
+  // // decoder le token
+  // decodeToken(): DecodeJwtTokenResponse  | null {
+  //   const token = this.getJwtToken();
+  //   if (!token) return null;
+  //
+  //   try {
+  //     return jwtDecode<DecodeJwtTokenResponse>(token);
+  //   } catch (error) {
+  //     console.error('Erreur lors du décodage du token JWT:', error);
+  //     return null;
+  //   }
+  // }
+
   decodeToken(): DecodeJwtTokenResponse | null {
     const token = this.getJwtToken();
+    console.log('Token à décoder:', token);
+
     if (!token) return null;
 
     try {
-      return jwtDecode<DecodeJwtTokenResponse>(token);
+      const decoded = jwtDecode(token); // Sans le type générique pour le test
+      console.log('Token décodé:', decoded);
+      return decoded as DecodeJwtTokenResponse;
     } catch (error) {
       console.error('Erreur lors du décodage du token JWT:', error);
       return null;
     }
   }
-
 
   // register(form: RegisterFormModel): Observable<UserTokenDtoModel> {
   //   return this._http.post<UserTokenDtoModel>(environment.registerUser, form).pipe(

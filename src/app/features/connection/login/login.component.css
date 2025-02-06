@@ -1,11 +1,21 @@
 
+
 .formulaire{
+
   padding: 10px;
-  margin: 70px;
+  margin-top: 70px;
+  margin-left:35%;
 
   border-radius: 10px;
+
   background-color: #7AA191;
   margin-bottom: 300px;
+
+  width: 500px;
+}
+
+p{
+  color: red;
 }
 
 h3{
@@ -58,3 +68,25 @@ button{
   width: 150px;
   height: 40px;
 }
+
+.login-liens-create{
+  text-align: center;
+}
+
+.login-liens-create h5{
+  color: #E3F5EE;
+  text-transform: uppercase;
+ font-size: 20px;
+
+}
+
+button{
+  transition: all .5s ease;
+
+}
+
+button:hover{
+  background-color: #F4D040;
+  color: #FEFDF9;
+}
+

@@ -1,6 +1,7 @@
 <a type="button-back" appBack>
   <img src="/img/picto/back.svg" class="button-back" alt="Retour" width="62px" height="62px">
 </a>
+
 <div class="formulaire">
   <h3>Se connecter </h3>
   <div class="formulaire-info">
@@ -10,8 +11,17 @@
       <input type="text" placeholder="password" formControlName="password">
 
 
-      <button type="submit"> Se connecter </button>
+      <button type="submit" > Se connecter </button>
+      @if (invalidinformation){
+        <p>le mot de passe ou l'Email est invalide </p>
+      }
 
     </form>
+    <div class="login-liens-create">
+      <h5> Pas encore de compte ? </h5>
+      <button routerLink="/createmangueur"> devenir un mangeur ! </button>
+      <button routerLink="/createpartenaire"> devenir un partenaire ! </button>
+    </div>
+
   </div>
 </div>

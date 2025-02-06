@@ -15,15 +15,28 @@ import {DecodeJwtTokenResponse} from '../../core/models/JwtToken';
 })
 export class NavbarComponent {
   isloginin : boolean = false;
-  userinfo : DecodeJwtTokenResponse | null = null;
+  userinfo : string |null = null
 
   constructor(private router: Router , private readonly _loginservice :LoginService) {
-    this._loginservice._currentUser$.subscribe(user => {this.isloginin = true;})
-    this.userinfo = this._loginservice.decodeToken()
 
-    console.log('userinfo',this.userinfo)
+    if (localStorage.getItem('token') != null) {
+      this.isloginin = true;
+
+    }
   }
 
+  ngOnInit() {
+    this.loadUserInfo();
+  }
+
+  loadUserInfo() {
+    const decodedToken = this._loginservice.decodeToken();
+    console.log(decodedToken);
+    if (decodedToken) {
+      this.userinfo = decodedToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+      console.log(this.userinfo);
+    }
+  }
 
 
 

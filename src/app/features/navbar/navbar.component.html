@@ -17,6 +17,7 @@
       <button routerLink="/login" class="button-login" > Login </button>
     } @else if (isloginin){
       <button class="button-login" (click) ="lougout()"> logout </button>
+      <p>bonjour {{userinfo}}</p>
     }
   </div>
 
@@ -31,7 +32,6 @@
 
   </div>
 
-  <div> <p>bonjour {{userinfo?.lastname}}</p> </div>
 
 
 </div>
