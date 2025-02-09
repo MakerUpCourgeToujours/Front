@@ -92,9 +92,7 @@ export class LoginService {
     this._currentUser$.next(undefined);
     localStorage.removeItem("currentUser")
     localStorage.removeItem("token");
-
-    //TODO prendre la bonne route
-    this._router.navigate(["/login"])
+        this._router.navigate(["/login"])
   }
 
 

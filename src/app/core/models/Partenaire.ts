@@ -7,13 +7,13 @@ export interface newPartenaire
   phoneNumber: string;
   isAdmin: boolean;
 
-  "nameCopany": string;
-  "typeUserB2B": string;
-  "deliveryLimit": number;
-  "numAdrress": string;
-  "street": string;
-  "city": string;
-  "postalCode": string;
-  "tavNumber": string;
+  nameCopany: string;
+  typeUserB2B: string;
+  deliveryLimit: number;
+  numAdrress: string;
+  street: string;
+  city: string;
+  postalCode: string;
+  tavNumber: string;
 
 }

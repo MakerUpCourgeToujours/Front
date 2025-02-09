@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {BackDirective} from '../../../../core/Directives/back.directive';
 import {MangeurCreate} from '../../../../core/models/mangeurCreate';
 import {FormControl, FormGroup, MaxValidator, ReactiveFormsModule, Validators} from '@angular/forms';
+import {CreateService} from '../../../../core/services/login/create.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-mangeur',
@@ -15,7 +17,8 @@ import {FormControl, FormGroup, MaxValidator, ReactiveFormsModule, Validators} f
 })
 export class MangeurComponent {
 
-
+  constructor(private readonly _router: Router, private readonly _mangeurservices :CreateService) {
+  }
 
   createMangeur = new FormGroup({
     lastName: new FormControl('', [Validators.required,Validators.max(100)]),
@@ -27,9 +30,6 @@ export class MangeurComponent {
 
   submit(event: SubmitEvent) {
 
-    console.log("submit");
-    console.log(this.createMangeur.valid);
-
     const NewMangeur: MangeurCreate = {
       firstName: this.createMangeur.controls['firstName']?.value || '',
       lastName : this.createMangeur.controls['lastName']?.value || '',
@@ -39,7 +39,16 @@ export class MangeurComponent {
       isAdmin : false,
       idAbonement : 0
     }
-    console.log(NewMangeur);
+    this._mangeurservices.addMangeur(NewMangeur).subscribe({
+      next: (result) => {
+        this._router.navigate(['/login']);
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+
+
 
   }
 }
