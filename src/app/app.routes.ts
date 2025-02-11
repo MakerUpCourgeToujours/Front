@@ -7,6 +7,9 @@ import {PartenaireComponent} from './features/connection/create/partenaire/parte
 import {LoginComponent} from './features/connection/login/login.component';
 import {isLoggedInGuard} from './core/guards/is-logged-in.guard';
 import {isRoleB2cGuard} from './core/guards/is-role-b2c.guard';
+import {ProductlocComponent} from './features/productUnit/productloc/productloc.component';
+import {ProductvegetComponent} from './features/productUnit/productveget/productveget.component';
+import {isRoleB2bGuard} from './core/guards/is-role-b2b.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +18,8 @@ export const routes: Routes = [
   {path:'createmangueur',component:MangeurComponent},
   {path:'createpartenaire',component:PartenaireComponent},
   {path:'login',component:LoginComponent},
+  {path:'productvegetable',component:ProductvegetComponent ,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
+  {path:'productlocal',component:ProductlocComponent,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
 
 
 

@@ -32,7 +32,7 @@
 
       @if (isValid('password')){
         <span class="error">
-                le most de passe est requis !
+                le mot de passe est requis !
         </span>
       }
       <input type="password" id="password" placeholder="mot de passe" formControlName="password">
@@ -43,8 +43,10 @@
         </span>
       }
       <input id="num" type="text" placeholder="Numéro de téléphone" formControlName="phoneNumber">
+
                                           <!--INFO compagnie ↓ -->
-      <h2 class="sous-titre"> information de votre compagne </h2>
+      
+      <h2 class="sous-titre"> information de votre entreprise </h2>
       @if (isValid('nameCopany')){
         <span class="error">
                 le nom de l'entrepise est requis !

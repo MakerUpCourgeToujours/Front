@@ -1,0 +1,29 @@
+<div class="all-produit" >
+
+  <h1>Tous les légume à l’unité</h1>
+
+  @for (prod of Product;track prod.id_product){
+    <div class="produit">
+
+
+      <img src="/img/test_carer.jpg" alt="testimg">
+
+
+      <p>{{prod.product_name}}</p>
+      <p>{{prod.product_price}}</p>
+
+
+
+
+      <div class="button-picto">
+        <input type="radio" name="choise_basket" id="hpp" value="1">
+        <label for="hpp" class="radio-label">
+        </label>
+      </div>
+    </div>
+
+
+  }
+
+
+</div>

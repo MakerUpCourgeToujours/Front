@@ -20,8 +20,7 @@ export class AboComponent implements OnInit {
   Subs : SubType[] = [];
   depots:DepotGasap[] = [];
   choseSubType : Subchose[]=[];
-  //TODO changer en 0 quand tout est ok
-  infosub : number = 1;
+  infosub : number = 0;
 
   constructor(private readonly route: ActivatedRoute, private readonly subTypeService:SubtypeService ) { }
   ngOnInit(): void {
