@@ -13,16 +13,76 @@
   color: #E3F5EE;
 
 }
+
+.produit-bloc{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 /* produit detail */
 .produit{
   background-color: #E3F5EE;
   margin: 10px;
+  width: 25%;
+  height: 25%;
+  border-radius: 10%;
+
+
+
 }
+
+.img-position{
+  text-align: center;
+}
+
 img{
-  width: 10%;
+  width: 70%;
+  height: 70%;
+  border-radius: 10%;
+  text-align: center;
 }
 
+.name-product{
+  margin: 0px;
+  margin-left: 20px ;
+  font-family: Satt;
+  font-size: 25px;
 
+}
+.prices{
+  padding: 0;
+  margin: 0;
+  margin-left:20px;
+  font-family: Satt;
+  font-size: 30px;
+}
+.price-quantiter{
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-quantiter select{
+  margin-right: 50px;
+  border-radius: 5px;
+  border-color: #7AA191 ;
+  width: 100px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.produit-button{
+  display: flex;
+  justify-content:  space-between;
+  flex-direction: row;
+
+
+}
+
+.prices-uniter{
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
 
 
 
@@ -31,15 +91,12 @@ img{
 
 
 /*BOUTTON ↓*/
-input[type="radio"] {
+input[type="submit"] {
   display: none;
 }
 .radio-label{
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid #FEFDF9;
   background-image: url(/img/picto/check-default.svg) ;

@@ -191,11 +191,11 @@
 
     @for (depot of depots; track depot.idGasap){
       <div class="depot-detail">
-        <h5 class="depot-titre"> Groupe "{{depot.depotName}}"</h5>
-        <p> Adresse: {{depot.address}}</p>
-        <p>Distribution: {{depot.deliveryDay}}</p>
-        <p>Fréquence:{{depot.frequency}} </p>
-        <p>Contacte: {{depot.mail}} </p>
+        <h5 class="depot-titre"> "{{depot.depotName}}"</h5>
+        <p> Adresse:<span class="spacing">{{depot.address.toLowerCase()}}</span></p>
+        <p>Distribution: <span class="spacing">{{depot.deliveryDay.toLowerCase()}}</span></p>
+        <p>Fréquence: <span class="spacing">{{depot.frequency.toLowerCase()}}</span></p>
+        <p>Contact:<span class="spacing">{{depot.mail}}</span></p>
 
       </div>
 

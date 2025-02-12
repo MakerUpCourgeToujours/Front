@@ -14,7 +14,8 @@ import {ProductService} from '../../../core/services/product/product.service';
   styleUrl: './productloc.component.css'
 })
 export class ProductlocComponent implements OnInit {
-  Product : Products[] = [];
+  Products : Products[] = [];
+
 
   constructor(private readonly _route: ActivatedRoute, private readonly _productservice:ProductService){}
 
@@ -22,12 +23,23 @@ export class ProductlocComponent implements OnInit {
 
     this._productservice.GetAll().subscribe({
       next: data => {
-        this.Product  = data;
+        this.Products  = data.map(p=> ({
+          ...p,
+          prixTotal : p.product_price
+        }));
       },
       error: error => {
         console.error(error);
       }
     })
+
+
+  }
+
+  changePrice(produit: Products, event: any) {
+
+    const quantite = parseInt(event.target.value);
+    produit.prixTotal = Math.round((produit.product_price * quantite) * 100) / 100;
 
 
   }

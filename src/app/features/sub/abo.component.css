@@ -11,12 +11,15 @@
   font-family: 'Satt';
   text-align: left;
   padding: 10px;
+
 }
 
 .info-sub-text{
   color: #E3F5EE;
   padding: 10px;
   font-size: 15px;
+  margin: 5px;
+
 }
 
 
@@ -45,6 +48,7 @@ h1{
   text-transform: uppercase;
   color: #E3F5EE;
   font-size: 50px;
+  margin-top: 5px;
 }
 
 .titre{
@@ -240,4 +244,8 @@ input[type="radio"]:checked + .radio-label {
 select{
   font-family:'Regular';
   border-radius: 10px;
+}
+
+.spacing{
+  margin-left: 8px;
 }

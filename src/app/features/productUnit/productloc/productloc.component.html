@@ -1,29 +1,37 @@
 <div class="all-produit" >
 
-  <h1>Tous les légume à l’unité</h1>
+  <h1>Tous les légumes à l’unité</h1>
+<div class="produit-bloc">
+      @for (prod of Products;track prod.id_product){
+        <div class="produit">
 
-  @for (prod of Product;track prod.id_product){
-    <div class="produit">
+          <div class="img-position">
+            <img src="/img/test_carer.jpg" alt="testimg">
+          </div>
+
+          <div class="price-quantiter">
+            <p class="prices">{{prod.prixTotal}}€</p>
+            <select (change)="changePrice(prod, $event)">
+              <option value="10" >10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+
+            <p class="prices-uniter">{{prod.product_price}}€/unité</p>
+          <div class="produit-button" >
+            <p class="name-product">{{prod.product_name}}</p>
+
+            <div class="button-picto">
+              <input type="submit" name="choise_basket" id="hpp">
+              <label for="hpp" class="radio-label">
+              </label>
+            </div>
+          </div>
+        </div>
 
 
-      <img src="/img/test_carer.jpg" alt="testimg">
+      }
 
-
-      <p>{{prod.product_name}}</p>
-      <p>{{prod.product_price}}</p>
-
-
-
-
-      <div class="button-picto">
-        <input type="radio" name="choise_basket" id="hpp" value="1">
-        <label for="hpp" class="radio-label">
-        </label>
-      </div>
-    </div>
-
-
-  }
-
+  </div>
 
 </div>

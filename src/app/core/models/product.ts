@@ -10,6 +10,7 @@ export interface Products {
   stock_product: number;
   categoriesList : categories[];
   moisDispoList : month[];
+  prixTotal?: number;
 }
 
 export interface categories {
