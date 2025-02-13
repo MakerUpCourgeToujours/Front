@@ -31,10 +31,10 @@ export class NavbarComponent {
 
   loadUserInfo() {
     const decodedToken = this._loginservice.decodeToken();
-    console.log(decodedToken);
+    //console.log(decodedToken);
     if (decodedToken) {
       this.userinfo = decodedToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-      console.log(this.userinfo);
+
     }
   }
 
@@ -44,7 +44,7 @@ export class NavbarComponent {
   lougout(){
     this._loginservice.logout()
     this.isloginin = false
-    console.log(this.isloginin)
+
   }
 
 }

@@ -42,28 +42,17 @@ export class LoginService {
     return null;
   }
 
-  // // decoder le token
-  // decodeToken(): DecodeJwtTokenResponse  | null {
-  //   const token = this.getJwtToken();
-  //   if (!token) return null;
-  //
-  //   try {
-  //     return jwtDecode<DecodeJwtTokenResponse>(token);
-  //   } catch (error) {
-  //     console.error('Erreur lors du décodage du token JWT:', error);
-  //     return null;
-  //   }
-  // }
+
 
   decodeToken(): DecodeJwtTokenResponse | null {
     const token = this.getJwtToken();
-    console.log('Token à décoder:', token);
+    //console.log('Token à décoder:', token);
 
     if (!token) return null;
 
     try {
       const decoded = jwtDecode(token); // Sans le type générique pour le test
-      console.log('Token décodé:', decoded);
+      //console.log('Token décodé:', decoded);
       return decoded as DecodeJwtTokenResponse;
     } catch (error) {
       console.error('Erreur lors du décodage du token JWT:', error);
@@ -71,13 +60,7 @@ export class LoginService {
     }
   }
 
-  // register(form: RegisterFormModel): Observable<UserTokenDtoModel> {
-  //   return this._http.post<UserTokenDtoModel>(environment.registerUser, form).pipe(
-  //     tap(_ => {
-  //       this._toast.showSuccess('Création du compte réussie', {header: 'Authentification'})
-  //     })
-  //   )
-  // }
+
 
   login(loginuser : loginUser): Observable<User> {
     return this.http.post(`${this.apiurl}/User/Login`, loginuser).pipe(

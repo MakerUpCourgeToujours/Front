@@ -38,7 +38,7 @@ export class LoginComponent {
       email: this.loginForm.controls['email']?.value || '',
       password: this.loginForm.controls['password']?.value || '',
     }
-    console.log(login)
+
 
     this._loginService.login(login).subscribe({next : (result) => {
       this._router.navigateByUrl('/home');

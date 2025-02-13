@@ -1,0 +1,40 @@
+
+
+<a type="button-back" appBack>
+  <img src="/img/picto/back.svg" class="button-back" alt="Retour" width="62px" height="62px">
+</a>
+
+<div class="detail-Base-product">
+
+  <img src="/img/test_carer.jpg" class="img-product">
+
+<h5>{{productdetail.product_name}}</h5>
+
+  <div class="price-quantiter">
+    <p class="prices">{{productdetail.product_price}}€</p>
+    <select (change)="changePrice(priceTotal, $event)">
+      <option value="10" >10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+
+  <p class="prices-uniter">{{productdetail.product_price}}€/unité</p>
+  <div class="produit-button" >
+    <p class="name-product">{{productdetail.product_name}}</p>
+    <p class="stock-product"> Stock: {{productdetail.stock_product}}</p>
+
+    <div class="button-picto">
+      <input type="submit" name="choise_basket" id="hpp">
+      <label for="hpp" class="radio-label">
+      </label>
+    </div>
+  </div>
+
+
+</div>
+
+
+

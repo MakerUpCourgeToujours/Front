@@ -10,6 +10,7 @@ import {isRoleB2cGuard} from './core/guards/is-role-b2c.guard';
 import {ProductlocComponent} from './features/productUnit/productloc/productloc.component';
 import {ProductvegetComponent} from './features/productUnit/productveget/productveget.component';
 import {isRoleB2bGuard} from './core/guards/is-role-b2b.guard';
+import {ProductUniteDetailComponent} from './features/productUnit/product-unite-detail/product-unite-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'productvegetable',component:ProductvegetComponent ,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
   {path:'productlocal',component:ProductlocComponent,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
+  {path:'details/:id',component:ProductUniteDetailComponent,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
 
 
 

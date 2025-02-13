@@ -1,35 +1,61 @@
 <div class="all-produit" >
+  <h1> nos produits  </h1>
 
-  <h1>Tous les légumes à l’unité</h1>
+  <p class="text-poduct">Bienvenue dans notre sélection de légumes frais cultivés avec soin à la ferme de la Papelotte. Nous vous proposons nos légumes de saison à l'unité pour vous permettre de composer votre panier selon vos envies.
+    Pour garantir une gestion optimale de notre production et assurer la viabilité de notre ferme, nous avons établi un montant minimum d'achat de <span class="price-user">{{MinBuy}} euros</span>  par commande. Cette disposition nous permet de maintenir des prix justes tout en vous offrant des légumes de qualité, fraîchement récoltés dans nos champs.
+    Chaque semaine, vous retrouverez une sélection variée de légumes selon la saison : des tomates gorgées de soleil en été, des courges généreuses en automne, des poireaux et choux résistants en hiver, et de tendres légumes primeurs au printemps. Tous nos légumes sont cultivés dans le respect de la terre et de la biodiversité.
+  </p>
+
+</div>
+
+<div class="all-produit" >
+
+  <h1>Tous nos légumes à l’unité </h1>
 <div class="produit-bloc">
       @for (prod of Products;track prod.id_product){
-        <div class="produit">
+        @if (isLegumeDisponible(prod)||prod.stock_product>0 ){
+          @if (prod.status){
 
-          <div class="img-position">
-            <img src="/img/test_carer.jpg" alt="testimg">
-          </div>
+            <a [routerLink]="['/details', prod.id_product]">
 
-          <div class="price-quantiter">
-            <p class="prices">{{prod.prixTotal}}€</p>
-            <select (change)="changePrice(prod, $event)">
-              <option value="10" >10</option>
-              <option value="20">20</option>
-            </select>
-          </div>
+            </a>
+            <div class="produit" >
 
-            <p class="prices-uniter">{{prod.product_price}}€/unité</p>
-          <div class="produit-button" >
-            <p class="name-product">{{prod.product_name}}</p>
+              <div class="img-position">
+                <img src="/img/test_carer.jpg" alt="testimg" (click)= "goToDetailProduct(prod.id_product)">
+              </div>
 
-            <div class="button-picto">
-              <input type="submit" name="choise_basket" id="hpp">
-              <label for="hpp" class="radio-label">
-              </label>
+              <div class="price-quantiter">
+                <p class="prices">{{prod.prixTotal}}€</p>
+                <select (change)="changePrice(prod, $event)">
+                  <option value="10" >10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                </select>
+              </div>
+
+              <p class="prices-uniter">{{prod.product_price}}€/unité</p>
+              <div class="produit-button" >
+                <p class="name-product">{{prod.product_name}}</p>
+                <p class="stock-product"> Stock: {{prod.stock_product}}</p>
+
+                <div class="button-picto">
+                  <input type="submit" name="choise_basket" id="hpp">
+                  <label for="hpp" class="radio-label">
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+
+          }
+
+        }
 
 
+      } @empty {
+        <p>Oups ! Nos légumes font la sieste... Ils seront de retour après leur pause photo-synthèse !</p>
       }
 
   </div>

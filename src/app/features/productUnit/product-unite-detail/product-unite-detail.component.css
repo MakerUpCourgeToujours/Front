@@ -1,0 +1,11 @@
+.detail-Base-product{
+  background: #7AA191;
+  border-radius: 10px;
+}
+
+.img-product{
+  padding:10px;
+  border-radius: 10%;
+  width:500px;
+  height:500px;
+}
