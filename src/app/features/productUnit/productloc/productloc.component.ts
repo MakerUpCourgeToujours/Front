@@ -5,6 +5,9 @@ import {SubtypeService} from '../../../core/services/sub/subtype.service';
 import {ProductService} from '../../../core/services/product/product.service';
 import {LoginService} from '../../../core/services/login/login.service';
 import {DecodeJwtTokenResponse} from '../../../core/models/JwtToken';
+import {UserB2B} from '../../../core/models/User';
+import {UserService} from '../../../core/services/login/user.service';
+import {Observable} from 'rxjs';
 
 
 
@@ -21,9 +24,10 @@ export class ProductlocComponent implements OnInit {
   Products : Products[] = [];
   MinBuy : number = 0;
   decodeToken : DecodeJwtTokenResponse | null = null;
+  UserLogin : UserB2B = null ;
 
 
-  constructor(private readonly _router: Router, private readonly _productservice:ProductService , private readonly _logservice: LoginService) {}
+    constructor(private readonly _router: Router, private readonly _productservice:ProductService , private readonly _logservice: LoginService , private readonly _userservice:UserService) {}
 
   ngOnInit(): void {
 
@@ -40,8 +44,6 @@ export class ProductlocComponent implements OnInit {
 
       })
 
-
-      //TODO aller chercher dans un get byID user ca limite ()
     this.MinBuy = this.getMinBuy();
 
   }
@@ -52,9 +54,23 @@ export class ProductlocComponent implements OnInit {
     if(this.decodeToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] == "Admin"){
       return 666
     }
+    else if (this.decodeToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] == "B2B"){
+
+      const idUser = Number(this.decodeToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]);
+
+     this._userservice.getB2BById(idUser).subscribe(u =>{
+
+         this.UserLogin = u;
+         this.MinBuy = u.deliveryLimit;
+
+     });
+
+
+      return this.MinBuy
+
+    }
 
     return this.MinBuy
-    //TODO faire le get by id pour aller chercher les info du user
   }
   changePrice(produit: Products, event: any) {
 
