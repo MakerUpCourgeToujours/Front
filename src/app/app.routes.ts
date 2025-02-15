@@ -11,6 +11,8 @@ import {ProductlocComponent} from './features/productUnit/productloc/productloc.
 import {ProductvegetComponent} from './features/productUnit/productveget/productveget.component';
 import {isRoleB2bGuard} from './core/guards/is-role-b2b.guard';
 import {ProductUniteDetailComponent} from './features/productUnit/product-unite-detail/product-unite-detail.component';
+import {AdminComponent} from './features/admin/admin.component';
+import {ProductListComponent} from './features/admin/product-list/product-list.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +24,8 @@ export const routes: Routes = [
   {path:'productvegetable',component:ProductvegetComponent ,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
   {path:'productlocal',component:ProductlocComponent,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
   {path:'details/:id',component:ProductUniteDetailComponent,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
+  {path:'admin',component:AdminComponent,canActivate:[isLoggedInGuard]},
+  {path:'productadmin',component:ProductListComponent,canActivate:[isLoggedInGuard]},
 
 
 

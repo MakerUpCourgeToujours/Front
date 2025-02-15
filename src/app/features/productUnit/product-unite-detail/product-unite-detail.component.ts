@@ -29,19 +29,18 @@ export class ProductUniteDetailComponent implements OnInit {
 
     this._productService.GetbyId(projectId).subscribe(p =>{
       this.productdetail = p
-
+      this.priceTotal = Math.round((this.productdetail.product_price * 10) * 100) / 100;
     });
 
-    this.priceTotal = Math.round((this.productdetail.product_price * 10) * 100) / 100;
 
 
 
   }
 
-  changePrice(Productprice, event: any) {
+  changePrice(event: any) {
 
     const quantite = parseInt(event.target.value);
-    Productprice = Math.round((this.productdetail.product_price * quantite) * 100) / 100;
+    this.priceTotal = Math.round((this.productdetail.product_price * quantite) * 100) / 100;
 
   }
 }

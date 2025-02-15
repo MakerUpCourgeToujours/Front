@@ -33,7 +33,7 @@ export class NavbarComponent {
     const decodedToken = this._loginservice.decodeToken();
     //console.log(decodedToken);
     if (decodedToken) {
-      this.userinfo = decodedToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+      this.userinfo = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] + ' ' + decodedToken.lastname;
 
     }
   }

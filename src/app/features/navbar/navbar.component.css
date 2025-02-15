@@ -99,3 +99,9 @@ button:hover{
   margin-right: 10px;
 }
 
+.login-out{
+  display: flex;
+  flex-direction: row;
+  font-family: Satt;
+  color: #7AA191;
+}

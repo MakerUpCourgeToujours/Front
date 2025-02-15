@@ -11,13 +11,13 @@
   <a routerLink="home">
     <h1>COURGE TOUJOURS !</h1>
   </a>
-  <div>
-    <input type="search" placeholder="Que cherchez-vous ?">
+  <div class="login-out">
     @if(!isloginin){
       <button routerLink="/login" class="button-login" > Login </button>
     } @else if (isloginin){
+      <p>Bonjour {{userinfo}}</p>
+      <button class="button-login" routerLink="/admin">gestion</button>
       <button class="button-login" (click) ="lougout()"> logout </button>
-      <p>bonjour {{userinfo}}</p>
     }
   </div>
 
@@ -25,7 +25,7 @@
 
   <div class="liens" >
     <button type="button" routerLink="abonement" >Abonnements aux paniers</button>
-    <button type="button" routerLink="productvegetable" >Légume à l'unité</button>
+    <button type="button" routerLink="productlocal" >Légume à l'unité</button>
     <button type="button" routerLink="productlocal" >Produits locaux</button>
     <button type="button" routerLink="#">Recettes</button>
 

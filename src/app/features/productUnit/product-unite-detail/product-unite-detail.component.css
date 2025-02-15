@@ -1,6 +1,20 @@
+
+
+a{
+  cursor: pointer;
+
+}
+
 .detail-Base-product{
   background: #7AA191;
   border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-detail{
+  margin-top: 100px;
+  margin-left: 50px;
 }
 
 .img-product{
@@ -8,4 +22,97 @@
   border-radius: 10%;
   width:500px;
   height:500px;
+}
+
+h5{
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: #E3F5EE;
+  font-family: Satt;
+}
+
+h6{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #E3F5EE;
+}
+
+p{
+  color: #E3F5EE;
+}
+
+select{
+  border-radius: 10px;
+  background: #E3F5EE;
+  border: none;
+  width: 50px;
+  align-items: center;
+
+}
+
+.price-quantiter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.price-quantiter .prices{
+  margin: 0;
+  font-family: Satt;
+  font-size: 40px;
+
+
+}
+
+.prices-uniter{
+  margin: 0;
+  font-size: 20px;
+}
+
+
+
+/*BOUTTON ↓*/
+input[type="submit"] {
+  display: none;
+}
+.radio-label{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #FEFDF9;
+  background-image: url(/img/picto/check-default.svg) ;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F4D040; /* Couleur jaune */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.radio-label:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(106, 106, 106, 0.6);
+}
+input[type="radio"]:checked + .radio-label {
+  background-image: url(/img/picto/check-01.svg); /* Chemin vers ton image de la coche */
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+
+.button-picto{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.button-picto img{
+  margin-bottom: 10px;
+}
+.button-picto label{
+  margin-right: 10px;
 }
