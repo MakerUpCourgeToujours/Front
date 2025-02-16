@@ -1,0 +1,42 @@
+<div class="bg">
+
+  <div class="navbar">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+
+  <div class="table-container">
+
+    <input type="text" class="search-bar" placeholder="Rechercher...">
+    <button class="filter-button">Tous</button>
+    <button routerLink="/userlist-mangeur" class="filter-button">liste de Mangeurs</button>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Nom / Prénom</th>
+        <th>email</th>
+        <th>Nom du partenaire</th>
+        <th>type de partenaire</th>
+        <th>Numéro de téléphone</th>
+        <th>address</th>
+        <th>Prix Max</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (user of Users;track user.idUser){
+
+          <tr>
+            <td>{{user.firstName}} {{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.nameCopany}}</td>
+            <td>{{user.typeUserB2B}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.street}} {{user.numAdrress}} {{user.city}}</td>
+            <td>{{user.deliveryLimit}}</td>
+          </tr>
+        }
+
+      </tbody>
+    </table>
+  </div>
+</div>

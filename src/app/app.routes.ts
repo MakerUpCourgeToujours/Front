@@ -13,6 +13,9 @@ import {isRoleB2bGuard} from './core/guards/is-role-b2b.guard';
 import {ProductUniteDetailComponent} from './features/productUnit/product-unite-detail/product-unite-detail.component';
 import {AdminComponent} from './features/admin/admin.component';
 import {ProductListComponent} from './features/admin/product-list/product-list.component';
+import {UserListComponent} from './features/admin/user-list/user-list.component';
+import {UserMangeurListComponent} from './features/admin/user-list/user-mangeur-list/user-mangeur-list.component';
+import {DepotListComponent} from './features/admin/depot-list/depot-list.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +29,9 @@ export const routes: Routes = [
   {path:'details/:id',component:ProductUniteDetailComponent,canActivate:[isLoggedInGuard , isRoleB2bGuard]},
   {path:'admin',component:AdminComponent,canActivate:[isLoggedInGuard]},
   {path:'productadmin',component:ProductListComponent,canActivate:[isLoggedInGuard]},
+  {path:'userlist',component:UserListComponent,canActivate:[isLoggedInGuard]},
+  {path:'userlist-mangeur',component:UserMangeurListComponent, canActivate:[isLoggedInGuard]},
+  {path:'depot-list',component:DepotListComponent,canActivate:[isLoggedInGuard]},
 
 
 

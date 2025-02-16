@@ -12,31 +12,25 @@
     <table>
       <thead>
       <tr>
-        <th>Nom Produit</th>
-        <th>Description</th>
-        <th>Stock</th>
-        <th>Prix unitaire</th>
-        <th>Statut</th>
+        <th>Nom du dépot</th>
+        <th>mail</th>
+        <th>date</th>
+        <th>frequence</th>
+        <th>Adresse</th>
         <th>Action</th>
       </tr>
       </thead>
       <tbody>
-        @for (prod of produts;track prod.id_product){
+        @for (depot of depots;track depot.idGasap){
 
           <tr>
-            <td>{{prod.product_name}}</td>
-            <td>{{ prod.product_description }}</td>
-            <td>{{prod.stock_product}}</td>
-            <td>{{prod.product_price}} €</td>
-            @if (prod.status == true){
-              <td>Disponible</td>
-
-            } @else {
-              <td>Indisponible</td>
-            }
+            <td>{{depot.depotName}}</td>
+            <td>{{ depot.mail }}</td>
+            <td>{{depot.deliveryDay}}</td>
+            <td>{{depot.frequency}}</td>
+            <td>{{depot.address}}</td>
             <td>
               <button class="modify-button">Modifier</button>
-              <button class="delete-button">🗑️</button>
             </td>
           </tr>
         }
